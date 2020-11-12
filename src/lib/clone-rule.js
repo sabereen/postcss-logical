@@ -5,7 +5,7 @@ export default (decl, dir) => {
 		raws: {}
 	}).removeAll() : postcss.rule({ selector: '&' });
 
-	rule.selectors = rule.selectors.map(selector => `${selector}:dir(${dir})`);
+	rule.selectors = rule.selectors.map(selector => `.${dir} ${selector}`);
 
 	return rule;
 };
